@@ -1,0 +1,49 @@
+NBA - Hybrid Framework: 
+===========================
+	This framework is designed based on Page Object Model. We used Selenium WebDriver to interact with Web application, TestNg is used for test execution. Extent report is used to get a html automation summary report.
+
+
+What are the components:
+========================
+1. ProjectSpecificMethods as Base class having common methods specific to the project
+2. steps package to have the classes for each page
+5. Testcases package to have the classes for each test case
+6. Utils package to have the classes related to common functionality across the framework
+	CommonsUtil
+	FileWriterUtil
+	
+
+Execution Flow:
+===============
+@BeforeSuite -> startReport() (BaseClass)
+	@BeforeTest -> setValues() (Runner/Test Class)
+		@BeforeClass -> startTestCase() (BaseClass)
+			@DataProvider -> Not used
+				@BeforeMethod -> preCondition() (BaseClass)
+					@Test TestCase
+				@AfterMethod -> postCondition() (BaseClass)
+			@AfterClass -> NA
+		@AfterTest -> NA
+@AfterSuite		-> endResult() (BaseClass)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
